@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: checklist, roadmap to the platinum, missables, and a cited guide for every trophy.">
+<link rel="stylesheet" href="./style.css">
+<script type="module" src="./js/main.js"></script>
+</head>
+<body>
+<header class="masthead">
+  <div class="brand">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; Offline guide</p>
+    <h1>Vice Ledger</h1>
+    <p class="tagline">Every one of the 55 trophies, with its official name, description and grade — a tracker that saves your progress, a roadmap to the platinum, and a guide to each trophy in our own words that cites its sources.</p>
+  </div>
+  <div class="stats" id="stats" aria-live="polite"></div>
+</header>
+
+<nav class="tabs" id="tabs" aria-label="Guide sections">
+  <button type="button" class="tab active" data-view="checklist">Checklist</button>
+  <button type="button" class="tab" data-view="roadmap">Roadmap to Platinum</button>
+  <button type="button" class="tab" data-view="missables">Missables</button>
+  <button type="button" class="tab" data-view="about">About &amp; Sources</button>
+</nav>
+
+<main>
+  <section id="view-checklist" class="view">
+    <div class="toolbar" role="search">
+      <label class="search-box">Search
+        <input type="search" id="search" placeholder="Search trophies by name or description…" autocomplete="off">
+      </label>
+      <div class="chips" id="kind-chips" aria-label="Filter by kind"></div>
+      <div class="toolbar-row">
+        <label>Grade
+          <select id="grade-filter">
+            <option value="">All grades</option>
+            <option value="platinum">Platinum</option>
+            <option value="gold">Gold</option>
+            <option value="silver">Silver</option>
+            <option value="bronze">Bronze</option>
+          </select>
+        </label>
+        <label>Status
+          <select id="status-filter">
+            <option value="">All trophies</option>
+            <option value="earned">Earned</option>
+            <option value="unearned">Not yet earned</option>
+          </select>
+        </label>
+        <label class="check"><input type="checkbox" id="missable-only"> Missable only</label>
+        <label class="check spoiler"><input type="checkbox" id="spoiler-toggle"> Spoiler-free: hide story trophies until earned</label>
+      </div>
+      <div class="toolbar-row actions">
+        <button type="button" id="export-btn">Export progress</button>
+        <button type="button" id="import-btn">Import progress</button>
+        <input type="file" id="import-file" accept=".json,application/json" hidden>
+        <button type="button" id="reset-btn" class="quiet">Reset progress</button>
+        <span class="save-note" id="save-note">Progress saves in this browser automatically.</span>
+      </div>
+    </div>
+    <p class="result-count" id="result-count"></p>
+    <div class="columns">
+      <div class="list-col">
+        <ul class="trophy-list" id="trophy-list"></ul>
+      </div>
+      <aside class="detail-col" id="detail" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <div class="roadmap-intro">
+      <h2>Roadmap to the platinum</h2>
+      <p>Three stages, in order, after PowerPyx&rsquo;s roadmap (difficulty 4/10, about 200 hours, one playthrough, no online trophies). The stages below are built from the official descriptions: which story chapters and missions, which collectibles and counts, in what order. Your checklist progress is shown on every stage.</p>
+    </div>
+    <div id="roadmap-stages"></div>
+  </section>
+
+  <section id="view-missables" class="view" hidden>
+    <div class="roadmap-intro">
+      <h2>Missable trophies</h2>
+      <p>Good news first: PowerPyx lists only <strong>one potentially missable trophy</strong> in the whole list. Everything else can be earned after the story in free-roam — but there is no mission replay, so keep a save at the start and end of each chapter.</p>
+    </div>
+    <div id="missable-list"></div>
+    <div class="callout">
+      <h3>Things that look missable but are not</h3>
+      <ul>
+        <li>Optional missions that disappear after a while (black icons with pink letters) — they do not count for trophies.</li>
+        <li>Quest givers who go quiet mid-story (Kenton, for example) — every trophy-related character comes back, and all are available after the story.</li>
+        <li>Time-sensitive quests with an hourglass icon — they fail after a while but are not relevant for trophies.</li>
+        <li>Some fences disappear permanently — new ones unlock as you go, and the ones that leave have no quests.</li>
+        <li>A few magazine collectibles sit in story buildings that later close — they also spawn elsewhere, and you do not need all of them for trophies.</li>
+      </ul>
+      <p class="cite">Source: PowerPyx — GTA 6 Trophy Guide &amp; Roadmap, &ldquo;Note regarding missable content&rdquo;.</p>
+    </div>
+  </section>
+
+  <section id="view-about" class="view" hidden>
+    <div class="about">
+      <h2>About this guide</h2>
+      <p><strong>Vice Ledger</strong> is a free, open-source, offline trophy guide and tracker for Grand Theft Auto VI on PlayStation 5. It runs entirely from its own files: no account, no network, no ads. Your progress lives in your browser&rsquo;s local storage and can be exported to a file and imported back.</p>
+      <h3>The list</h3>
+      <p>55 trophies: 1 platinum, 2 gold, 6 silver, 46 bronze; 28 of them hidden on PlayStation until earned (1 gold, 27 bronze). Names, descriptions and grades are the official list as PlayStation publishes them. Hidden flags follow PSNProfiles as broken down by EGamers.io; PSN&rsquo;s tracked counts (such as 42 Shooting Range challenges, 52 areas of Leonida, 500 profile actions) come from PSNProfiles and the One More Game list.</p>
+      <h3>How the guides are written</h3>
+      <p>Every guide is written in our own words for this entry. Guides may draw on other guides, and each one names its sources beside it — a source is cited, never copied. Where a location or step is not pinned down by a source, the guide says so plainly (&ldquo;not yet checked in the game&rdquo;) instead of inventing specifics. One trophy, Bad Luck, I Guess, is still unsolved at every source we read: the guide says so rather than guessing.</p>
+      <h3>Sources</h3>
+      <ul class="source-list" id="source-list"></ul>
+      <h3>Offline &amp; privacy</h3>
+      <p>This page makes no network request when it runs. The source links above open only when you follow them. Nothing is uploaded anywhere; export writes a file on your own device.</p>
+      <p class="fineprint">Not affiliated with Rockstar Games, Take-Two Interactive or PlayStation. No Rockstar logo, official artwork or box art is used anywhere in this guide. Trophy names and descriptions are shown as PlayStation publishes them.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Vice Ledger — a free offline GTA VI trophy guide &amp; tracker. 55 trophies &middot; 1 platinum &middot; 2 gold &middot; 6 silver &middot; 46 bronze &middot; 28 hidden &middot; 1 potentially missable.</p>
+</footer>
+</body>
+</html>
